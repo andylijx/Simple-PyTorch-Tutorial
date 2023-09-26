@@ -10,7 +10,7 @@ y_data = torch.Tensor([[2.0],
 class LinearModel(torch.nn.Module): # our model class should be inherit from nn.Module, which is Base class for all neural network modules
 
     def __init__(self): # member methods __init__() and forward() have to be implemented
-        super(LinearModel, self).__init__()
+        super(LinearModel, self).__init__() # super(LinearModel, self) firstly finds out LinearModel's parent(namely torch.nn.Module), and then turn the LinearModel's object into torch.nn.Module's
         self.linear = torch.nn.Linear(1, 1) # class nn.Linear contain 2 member Tensors: weight and bias
 
     def forward(self, x):
